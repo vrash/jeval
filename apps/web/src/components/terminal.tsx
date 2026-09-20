@@ -38,7 +38,7 @@ const COLOR: Record<Line["kind"], string> = {
   pass: "text-pass",
   fail: "text-fail",
   review: "text-review",
-  muted: "text-fg-faint",
+  muted: "text-fg-muted",
 };
 
 const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";

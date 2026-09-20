@@ -207,19 +207,11 @@ body {
   32% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 0%, transparent); border-color: var(--color-line); }
 }
 .pipeline-step { animation: pipeline-pulse 9s ease-in-out infinite; animation-delay: calc(var(--i) * 1.5s); }
-@keyframes pipeline-flow { from { background-position: 0 0; } to { background-position: 24px 0; } }
-.pipeline-link {
-  background-image: linear-gradient(90deg, var(--color-line-strong) 0 8px, transparent 8px 12px);
-  background-size: 12px 2px;
-  background-repeat: repeat-x;
-  background-position: 0 0;
-  animation: pipeline-flow 1.2s linear infinite;
-}
 @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .rise { animation: rise 0.5s ease-out both; animation-delay: calc(var(--i, 0) * 80ms); }
 .caret::after { content: "▌"; margin-left: 1px; animation: blink 1s steps(1) infinite; color: var(--color-accent); }
 @keyframes blink { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
-  .pipeline-step, .pipeline-link, .rise, .caret::after { animation: none !important; }
+  .pipeline-step, .rise, .caret::after { animation: none !important; }
   .rise { opacity: 1; transform: none; }
 }
