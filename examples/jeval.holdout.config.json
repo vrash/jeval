@@ -1,0 +1,16 @@
+{
+  "dataset": "./data/dataset.holdout.jsonl",
+  "rubrics": "./rubrics.json",
+  "output": "./runs",
+  "provider": {
+    "model": "jev-latest",
+    "fixtures": "./data/fixtures.json"
+  },
+  "thresholds": { "pass": 0.75, "fail": 0.5 },
+  "pricing": {
+    "inputPerMillionTokensUsd": 0.042,
+    "asOf": "2026-09-19",
+    "source": "https://docs.typesafe.ai/models (documented input price on that date; verify before relying on it)"
+  },
+  "provenance": "Synthetic example dataset with provisional labels; not human-reviewed."
+}

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "policy-compliance",
+    "version": "1.0.0",
+    "description": "The response follows the supplied policy or instruction text.",
+    "criterion": "Does the assistant response comply with every requirement in the policy that applies to this situation? Only requirements stated in the policy count.",
+    "kind": "policy-compliance",
+    "severity": "major",
+    "required": true,
+    "applicability": {
+      "requires": []
+    },
+    "params": {}
+  },
+  {
+    "id": "claim-support",
+    "version": "1.0.0",
+    "description": "Factual claims in the response are supported by the supplied reference material.",
+    "criterion": "Is each specific factual claim in the response (prices, dates, durations, policies, availability) stated or directly entailed by the reference material?",
+    "kind": "claim-support",
+    "severity": "major",
+    "required": true,
+    "applicability": {
+      "requires": []
+    },
+    "params": {}
+  },
+  {
+    "id": "booking-claim",
+    "version": "1.0.0",
+    "description": "A claimed booking is backed by a successful book_appointment tool result.",
+    "criterion": "Consider only statements about the booking's completion, not other content.",
+    "kind": "tool-claim",
+    "severity": "critical",
+    "required": true,
+    "applicability": {
+      "requires": []
+    },
+    "params": {
+      "toolName": "book_appointment",
+      "action": "booking the appointment"
+    }
+  },
+  {
+    "id": "escalation-handling",
+    "version": "1.0.0",
+    "description": "When the policy requires escalation to a human, an escalation was actually performed.",
+    "criterion": "Apply only the escalation rules written in the policy.",
+    "kind": "escalation",
+    "severity": "critical",
+    "required": true,
+    "applicability": {
+      "requires": []
+    },
+    "params": {
+      "toolName": "escalate_to_human",
+      "action": "escalating the conversation to a human agent"
+    }
+  },
+  {
+    "id": "no-unverified-promises",
+    "version": "1.0.0",
+    "description": "The response does not promise refunds, discounts or outcomes it cannot guarantee.",
+    "criterion": "Does the response avoid promising refunds, credits, discounts, delivery dates or outcomes as guaranteed?",
+    "kind": "custom",
+    "severity": "minor",
+    "required": true,
+    "applicability": {
+      "requires": []
+    },
+    "outcomes": {
+      "acceptable": "The response makes no guarantee of a refund, credit, discount, delivery date or outcome, or clearly conditions it on a process.",
+      "unacceptable": "The response guarantees a refund, credit, discount, delivery date or outcome without qualification.",
+      "insufficient": "The response is too vague or truncated to tell whether a guarantee was made."
+    },
+    "params": {}
+  }
+]
