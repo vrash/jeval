@@ -77,12 +77,12 @@ test.describe("waitlist form", () => {
 
   test("shows success when the server accepts the signup", async ({ page }) => {
     await page.route("**/api/waitlist", (route) =>
-      route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ ok: true, message: "You're on the list. We'll email you about Jeval Cloud early access." }) }),
+      route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ ok: true, message: "You're on the list. We'll email you about jeval Cloud early access." }) }),
     );
     await page.goto("/cloud");
     const form = page.locator("form").first();
     await form.getByLabel("Email").fill("jeval-e2e-test@example.com");
-    await form.getByLabel(/What would you use Jeval to evaluate/).fill("support bot");
+    await form.getByLabel(/What would you use jeval to evaluate/).fill("support bot");
     await form.getByRole("button", { name: "Join the Cloud waitlist" }).click();
     await expect(form.getByRole("status")).toContainText("You're on the list");
   });

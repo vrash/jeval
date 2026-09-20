@@ -70,7 +70,7 @@ export interface JevProviderOptions {
   baseURL?: string;
   /** Model id, e.g. jev-latest or jev-1.13.0. Defaults to TYPESAFE_DEFAULT_MODEL, then jev-latest. */
   model?: string;
-  /** Per-attempt timeout in ms. Jeval performs retries itself, so the SDK's own retries are disabled. */
+  /** Per-attempt timeout in ms. jeval performs retries itself, so the SDK's own retries are disabled. */
   timeoutMs?: number;
   /** Custom fetch, for proxies or tests. */
   fetch?: Fetch;
@@ -81,7 +81,7 @@ export interface JevProviderOptions {
   logLevel?: LogLevel;
 }
 
-/** Map SDK errors to Jeval provider errors with transient/non-transient classification. */
+/** Map SDK errors to jeval provider errors with transient/non-transient classification. */
 export function mapJevError(error: unknown): ProviderError {
   if (error instanceof ProviderError) return error;
   if (error instanceof RateLimitError) {

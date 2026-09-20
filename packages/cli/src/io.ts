@@ -98,7 +98,7 @@ const RunReportShape = z.object({ schemaVersion: z.literal(1), runId: z.string()
 export function loadRun(path: string): RunReport {
   const raw = readJson(path);
   const ok = RunReportShape.safeParse(raw);
-  if (!ok.success) throw new CliError(`${path} is not a Jeval run report (schemaVersion 1): ${formatZod(ok.error)}`);
+  if (!ok.success) throw new CliError(`${path} is not a jeval run report (schemaVersion 1): ${formatZod(ok.error)}`);
   return raw as RunReport;
 }
 

@@ -1,4 +1,4 @@
--- Jeval Cloud waitlist + shared abuse-control tables.
+-- jeval Cloud waitlist + shared abuse-control tables.
 --
 -- Access model (see https://supabase.com/docs/guides/database/postgres/row-level-security):
 --   * Every table here has Row Level Security enabled and NO policies. With RLS on and no
@@ -46,7 +46,7 @@ create table if not exists public.waitlist_signups (
 );
 
 comment on table public.waitlist_signups is
-  'Jeval Cloud early-access waitlist. One row per email address. Contains only what the person typed '
+  'jeval Cloud early-access waitlist. One row per email address. Contains only what the person typed '
   '(email, optional use case), where the form lived (source/campaign) and which privacy notice they '
   'saw (notice_version). No IP address, user agent, URL, referrer or fingerprint columns exist and none '
   'must be added. Retention: kept until the person asks for deletion or the waitlist is closed; '

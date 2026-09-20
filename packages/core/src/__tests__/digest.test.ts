@@ -40,7 +40,7 @@ describe("digest", () => {
     expect(evidence.digest?.applied).toBe(true);
     expect(evidence.digest!.truncated.length).toBeGreaterThan(0);
     const s = JSON.stringify(state);
-    expect(s).toContain("truncated by Jeval digest");
+    expect(s).toContain("truncated by jeval digest");
     expect(s.length).toBeLessThanOrEqual(20_000 + 500);
     expect(cutSafe("ab😀", 3)).toBe("ab");
   });
@@ -54,7 +54,7 @@ describe("digest", () => {
     const provider = new ScriptedProvider(() => ({ policy: answer({ acceptable: 0.9, unacceptable: 0.05, insufficient_context: 0.05 }) }));
     const r = await evaluateCase(makeCase({ messages: longMessages(40) }), [policyRubric], { provider, digest: { maxChars: 6000 } });
     expect(r.checks[0]!.evidence.digest?.applied).toBe(true);
-    expect(JSON.stringify(provider.requests[0]!.state)).toContain("Jeval digest");
+    expect(JSON.stringify(provider.requests[0]!.state)).toContain("jeval digest");
   });
 });
 

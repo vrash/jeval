@@ -11,7 +11,7 @@ export default function Page() {
       <DocTitle slug="quickstart" />
       <div className="prose">
         <p>
-          Jeval is a pnpm workspace. Until the packages are published you install from a clone or from locally packed tarballs; the site never
+          jeval is a pnpm workspace. Until the packages are published you install from a clone or from locally packed tarballs; the site never
           claims they are on npm. Node 22 (≥ 20.9) and pnpm 10 are required.
         </p>
         <h2 id="install">1. Clone and build</h2>

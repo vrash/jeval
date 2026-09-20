@@ -11,7 +11,7 @@ export default function Page() {
       <DocTitle slug="rubrics" />
       <div className="prose">
         <p>
-          A rubric is one narrow check with a stable <code>id</code> and <code>version</code>. Jeval prefers several small checks to one broad quality
+          A rubric is one narrow check with a stable <code>id</code> and <code>version</code>. jeval prefers several small checks to one broad quality
           score: each becomes a single multiple-choice question for Jev, and every question for a case is sent in one request.
         </p>
         <CodeBlock code={RUBRIC_EXAMPLE} lang="json" title="rubrics.json entry" />
@@ -77,7 +77,7 @@ export default function Page() {
         <h2 id="explanations">What is shown for each check</h2>
         <p>
           The criterion exactly as sent, the selected outcome, the full probabilities, the provider&apos;s confidence statistic, the rule applied by code (if
-          any), and which evidence fields and ids were included. Jeval does not invent free-text rationales or quotations: Jev returns decisions, not
+          any), and which evidence fields and ids were included. jeval does not invent free-text rationales or quotations: Jev returns decisions, not
           explanations.
         </p>
       </div>

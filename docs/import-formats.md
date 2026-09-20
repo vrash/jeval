@@ -1,7 +1,7 @@
 # Importing real conversations and traces
 
 `@jeval/core` ships an importer (`packages/core/src/import.ts`) that converts exported traces and
-conversations from common tools into Jeval `EvalCase` records, so last week's real traffic can be
+conversations from common tools into jeval `EvalCase` records, so last week's real traffic can be
 evaluated with one command (`jeval capture`).
 
 ```ts

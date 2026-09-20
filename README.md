@@ -1,11 +1,11 @@
-# Jeval
+# jeval
 
 **Know when your AI gets it wrong.** Open-source evaluations for AI outputs and agents. Define your checks, run them with [TypeSafe's Jev](https://docs.typesafe.ai), and inspect failures and uncertain results.
 
-Jeval is an independent project that uses TypeSafe's Jev as its first judge provider. It is not affiliated with TypeSafe. Package names (`@jeval/*`) and the domain are provisional; nothing has been published to npm yet (the unscoped name `jeval` on npm belongs to an unrelated project).
+jeval is an independent project that uses TypeSafe's Jev as its first judge provider. It is not affiliated with TypeSafe. Package names (`@jeval/*`) and the domain are provisional; nothing has been published to npm yet (the unscoped name `jeval` on npm belongs to an unrelated project).
 
-- **Jeval open source** (this repository): TypeScript SDK, CLI, rubrics, local HTML reports, examples. No account; bring your own TypeSafe API key. MIT.
-- **Jeval Cloud** (planned): managed runs, saved history, shared dashboards, alerts and team workflows. Waitlist only; nothing is built yet.
+- **jeval open source** (this repository): TypeScript SDK, CLI, rubrics, local HTML reports, examples. No account; bring your own TypeSafe API key. MIT.
+- **jeval Cloud** (planned): managed runs, saved history, shared dashboards, alerts and team workflows. Waitlist only; nothing is built yet.
 
 ## What it does
 
@@ -96,7 +96,7 @@ Exit codes with `--ci`: `0` gates met · `1` quality gate failed · `2` run inco
 packages/core          schemas, rubrics, decisions, dataset runs, reports, compare, benchmark, provider interface, fixture provider
 packages/provider-jev  TypeSafe Jev adapter on @typesafe-ai/sdk 0.6.0 (verified 2026-09-19)
 packages/cli           jeval executable
-apps/web               Next.js 16 site: docs, interactive demo, Jeval Cloud waitlist endpoint
+apps/web               Next.js 16 site: docs, interactive demo, jeval Cloud waitlist endpoint
 examples               synthetic tuning/holdout datasets, labels, fixtures, SDK example, benchmark script
 supabase/migrations    waitlist table, shared rate limiter and demo budget, with RLS
 docs                   architecture, rubric guide, limitations, release, deployment, waitlist data handling

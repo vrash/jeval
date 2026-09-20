@@ -1,7 +1,7 @@
 {
   "name": "@jeval/cli",
   "version": "0.1.0",
-  "description": "Jeval command line: init, run, report, compare and benchmark evaluations",
+  "description": "jeval command line: init, run, report, compare and benchmark evaluations",
   "license": "MIT",
   "type": "module",
   "bin": { "jeval": "./dist/cli.js" },

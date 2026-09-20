@@ -1,5 +1,5 @@
 /**
- * Import exported traces and conversations from common tools into Jeval `EvalCase` records.
+ * Import exported traces and conversations from common tools into jeval `EvalCase` records.
  *
  * Supported sources: OpenAI Chat Completions message logs (`chat`), OpenTelemetry GenAI spans
  * (`otel`), Langfuse traces (`langfuse`), LangWatch traces (`langwatch`) and a dotted-path

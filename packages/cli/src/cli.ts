@@ -98,7 +98,7 @@ program
 program
   .command("capture")
   .argument("<traces>", "exported traces: JSONL or a JSON array")
-  .description("convert exported traces (OpenAI chat, OpenTelemetry GenAI spans, Langfuse, LangWatch, generic) into a Jeval dataset")
+  .description("convert exported traces (OpenAI chat, OpenTelemetry GenAI spans, Langfuse, LangWatch, generic) into a jeval dataset")
   .requiredOption("-o, --out <dataset.jsonl>", "dataset to write (refuses to overwrite unless --append)")
   .option("--format <name>", "chat | otel | langfuse | langwatch | generic | auto", "auto")
   .option("--id-prefix <prefix>", "prefix for generated case ids", "imported")

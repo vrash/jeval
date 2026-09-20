@@ -38,4 +38,4 @@ Two live runs of the same datasets on the same day disagreed on a handful of bor
 
 ## Out of scope in this release
 
-Running agents or applications; other judge providers (compare by importing their reports into the run schema); Jeval Cloud, accounts, billing, dashboards, scheduling, enterprise controls, a Python SDK.
+Running agents or applications; other judge providers (compare by importing their reports into the run schema); jeval Cloud, accounts, billing, dashboards, scheduling, enterprise controls, a Python SDK.

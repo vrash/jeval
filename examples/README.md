@@ -1,4 +1,4 @@
-# Jeval examples
+# jeval examples
 
 Small, fully synthetic datasets that exercise every built-in rubric, plus the fixtures, labels,
 configs and scripts needed to run them offline and to benchmark a judge against them.

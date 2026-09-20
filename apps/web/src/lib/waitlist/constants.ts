@@ -6,7 +6,7 @@
 export const NOTICE_VERSION = "2026-09-19" as const;
 
 export const NOTICE_TEXT =
-  "We'll use your email only to contact you about Jeval Cloud early access. No marketing lists, no sharing. You can ask us to delete it at any time.";
+  "We'll use your email only to contact you about jeval Cloud early access. No marketing lists, no sharing. You can ask us to delete it at any time.";
 
 export const WAITLIST_SOURCES = ["site", "docs", "demo", "cloud-page"] as const;
 export type WaitlistSource = (typeof WAITLIST_SOURCES)[number];
@@ -20,5 +20,5 @@ export const RATE_LIMIT_WINDOW_SECONDS = 10 * 60;
 export const RATE_LIMIT_PER_CLIENT = 20;
 export const RATE_LIMIT_PER_EMAIL = 3;
 
-export const SUCCESS_MESSAGE = "You're on the list. We'll email you about Jeval Cloud early access.";
+export const SUCCESS_MESSAGE = "You're on the list. We'll email you about jeval Cloud early access.";
 export const UNAVAILABLE_MESSAGE = "The waitlist is temporarily unavailable. Nothing was saved.";

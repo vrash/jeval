@@ -8,7 +8,7 @@ function normaliseUrl(value: string | undefined, fallback: string): string {
   }
 }
 
-export const SITE_NAME = "Jeval";
+export const SITE_NAME = "jeval";
 export const SITE_TAGLINE = "Know when your AI gets it wrong.";
 export const SITE_DESCRIPTION =
   "Open-source evaluations for AI outputs and agents. Define your checks, run them with Jev, and inspect failures and uncertain results.";

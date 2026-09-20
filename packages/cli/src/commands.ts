@@ -441,7 +441,7 @@ export interface CaptureOptions {
 
 /**
  * Convert exported traces or conversations (OpenAI chat, OpenTelemetry GenAI spans, Langfuse,
- * LangWatch, or a generic mapping) into a Jeval dataset, so real traffic can be evaluated.
+ * LangWatch, or a generic mapping) into a jeval dataset, so real traffic can be evaluated.
  */
 export async function captureCommand(sourcePath: string, opts: CaptureOptions, io: Io): Promise<{ exitCode: number; imported: number; skipped: number }> {
   const abs = resolve(io.cwd, sourcePath);

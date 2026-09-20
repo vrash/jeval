@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { SITE_DESCRIPTION, SITE_TAGLINE } from "@/lib/site";
 
-export const alt = "Jeval — Know when your AI gets it wrong.";
+export const alt = "jeval — Know when your AI gets it wrong.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -25,7 +25,7 @@ export default function Image() {
           <div style={{ width: 52, height: 52, borderRadius: 12, background: "#17130f", display: "flex", alignItems: "center", justifyContent: "center", color: "#faf8f4", fontSize: 30 }}>
             J
           </div>
-          Jeval
+          jeval
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <div style={{ fontSize: 88, fontWeight: 700, letterSpacing: -3, lineHeight: 1.02 }}>{SITE_TAGLINE}</div>

@@ -66,7 +66,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-3 text-fg-muted">
               Every rubric asks Jev one narrow multiple-choice question about the state you supply: acceptable, unacceptable, or not enough evidence.
-              Jeval turns the returned probabilities into <StatusBadge status="pass" size="sm" />, <StatusBadge status="fail" size="sm" /> or{" "}
+              jeval turns the returned probabilities into <StatusBadge status="pass" size="sm" />, <StatusBadge status="fail" size="sm" /> or{" "}
               <StatusBadge status="review" size="sm" /> using thresholds you control, and composes them with exact checks in code, such as whether the
               booking tool actually returned <code className="font-mono text-sm">confirmed</code>.
             </p>
@@ -128,13 +128,13 @@ export default function HomePage() {
 
       <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6" aria-labelledby="paths">
         <h2 id="paths" className="text-2xl font-semibold tracking-tight">
-          Two ways to use Jeval
+          Two ways to use jeval
         </h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-2">
           <div className="rounded-xl border border-fg p-6">
             <p className="text-xs font-medium uppercase tracking-wide text-fg-muted">Available now</p>
-            <h3 className="mt-1 text-xl font-semibold">Jeval open source</h3>
-            <p className="mt-2 text-fg-muted">MIT licensed. No Jeval account. Bring your own TypeSafe API key; runs and reports stay on your machine.</p>
+            <h3 className="mt-1 text-xl font-semibold">jeval open source</h3>
+            <p className="mt-2 text-fg-muted">MIT licensed. No jeval account. Bring your own TypeSafe API key; runs and reports stay on your machine.</p>
             <ul className="mt-4 space-y-2 text-sm">
               {["TypeScript SDK for single cases and datasets", "CLI: init, run, report, compare, benchmark", "Five starter rubric kinds plus custom criteria", "Local HTML reports and CI exit codes", "Deterministic fixture mode for offline tests"].map((t) => (
                 <li key={t} className="flex gap-2">
@@ -156,7 +156,7 @@ export default function HomePage() {
           </div>
           <div className="rounded-xl border border-dashed border-line-strong p-6">
             <p className="text-xs font-medium uppercase tracking-wide text-accent">Planned · waitlist</p>
-            <h3 className="mt-1 text-xl font-semibold">Jeval Cloud</h3>
+            <h3 className="mt-1 text-xl font-semibold">jeval Cloud</h3>
             <p className="mt-2 text-fg-muted">A managed service we are designing. None of this exists yet; the waitlist tells us what to build first.</p>
             <ul className="mt-4 space-y-2 text-sm text-fg-muted">
               {["Managed runs without your own provider key", "Saved history and run-over-run comparisons", "Shared dashboards for a team", "Alerts on new failures", "Review queues for uncertain results"].map((t) => (
@@ -191,7 +191,7 @@ export default function HomePage() {
 
       <section className="mx-auto mt-20 max-w-3xl px-4 sm:px-6" aria-labelledby="waitlist" id="waitlist">
         <h2 id="waitlist" className="text-2xl font-semibold tracking-tight">
-          Jeval Cloud waitlist
+          jeval Cloud waitlist
         </h2>
         <p className="mt-2 text-fg-muted">Managed runs, saved history and team dashboards are planned. Leave your email to hear about early access.</p>
         <div className="mt-6 rounded-xl border border-line bg-bg-elevated p-5">
@@ -204,10 +204,10 @@ export default function HomePage() {
 
 const FAQ: Array<[string, React.ReactNode]> = [
   [
-    "Is Jeval free?",
-    "The framework is MIT-licensed and free. Real evaluations call TypeSafe's Jev with your own API key, and TypeSafe may bill that usage. Jeval estimates cost from a rate you configure and labels it as an estimate.",
+    "Is jeval free?",
+    "The framework is MIT-licensed and free. Real evaluations call TypeSafe's Jev with your own API key, and TypeSafe may bill that usage. jeval estimates cost from a rate you configure and labels it as an estimate.",
   ],
-  ["Do I need a Jeval account?", "No. The open-source SDK and CLI work from a clone with your own provider key. Jeval Cloud is a planned managed service and is not available yet."],
+  ["Do I need a jeval account?", "No. The open-source SDK and CLI work from a clone with your own provider key. jeval Cloud is a planned managed service and is not available yet."],
   ["What do I need for real runs?", "A TypeSafe API key. Without one you can still run everything in fixture mode, which uses deterministic simulated answers and is labelled as such everywhere."],
   [
     "What does 'review' mean?",
@@ -217,6 +217,6 @@ const FAQ: Array<[string, React.ReactNode]> = [
     "Does running locally keep my data local?",
     "Reports and datasets stay on your machine, but a live run sends the selected fields of each case (input, output, policy, references, tool events) to TypeSafe. Expected labels and metadata are never sent. Fixture mode sends nothing.",
   ],
-  ["Is Jeval made by TypeSafe?", "No. Jeval is an independent open-source project that uses TypeSafe's Jev as its first judge provider. It is not affiliated with or endorsed by TypeSafe."],
+  ["Is jeval made by TypeSafe?", "No. jeval is an independent open-source project that uses TypeSafe's Jev as its first judge provider. It is not affiliated with or endorsed by TypeSafe."],
   ["Is the judge immune to prompt injection?", "No. Evaluated text is marked as untrusted in every question, and the examples include adversarial cases, but this is a mitigation with observed limits, not immunity. See the limitations page."],
 ];

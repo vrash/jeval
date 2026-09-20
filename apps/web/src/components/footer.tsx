@@ -6,7 +6,7 @@ export function Footer({ repoUrl }: { repoUrl: string | null }) {
     <footer className="mt-24 border-t border-line">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 text-sm sm:grid-cols-4 sm:px-6">
         <div className="sm:col-span-2">
-          <p className="font-semibold">Jeval</p>
+          <p className="font-semibold">jeval</p>
           <p className="mt-2 max-w-sm text-fg-muted">
             Open-source evaluations for AI outputs and agents, judged by Jev. An independent project that uses TypeSafe&rsquo;s
             technology; not affiliated with TypeSafe.
@@ -17,7 +17,7 @@ export function Footer({ repoUrl }: { repoUrl: string | null }) {
           <ul className="mt-2 space-y-1.5 text-fg-muted">
             <li><Link href="/docs" className="hover:text-fg">Docs</Link></li>
             <li><Link href="/demo" className="hover:text-fg">Demo</Link></li>
-            <li><Link href="/cloud" className="hover:text-fg">Jeval Cloud waitlist</Link></li>
+            <li><Link href="/cloud" className="hover:text-fg">jeval Cloud waitlist</Link></li>
             {repoUrl ? <li><a href={repoUrl} className="hover:text-fg" rel="noopener">Source on GitHub</a></li> : <li className="text-fg-faint">Source: publishing soon</li>}
           </ul>
         </div>

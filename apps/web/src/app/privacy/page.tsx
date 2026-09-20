@@ -4,7 +4,7 @@ import { CONTACT_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy",
-  description: "What the Jeval website stores, what it deliberately does not, and how to get your waitlist entry deleted.",
+  description: "What the jeval website stores, what it deliberately does not, and how to get your waitlist entry deleted.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -15,10 +15,10 @@ export default function PrivacyPage() {
       <p className="mt-2 text-sm text-fg-muted">Describes how this site actually handles data. Notice version {NOTICE_VERSION}.</p>
       <div className="prose mt-8">
         <h2>Waitlist</h2>
-        <p>When you join the Jeval Cloud waitlist, the server stores:</p>
+        <p>When you join the jeval Cloud waitlist, the server stores:</p>
         <ul>
           <li>your email address, lower-cased and trimmed, used as a unique key so repeat signups do not create duplicates;</li>
-          <li>the optional answer to &ldquo;What would you use Jeval to evaluate?&rdquo; (up to 280 characters), kept from your first signup only;</li>
+          <li>the optional answer to &ldquo;What would you use jeval to evaluate?&rdquo; (up to 280 characters), kept from your first signup only;</li>
           <li>the page the form was on (site, docs, demo or cloud page) and an optional short campaign tag from an allowlist;</li>
           <li>the version of the notice shown to you and the time of signup.</li>
         </ul>
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
           analytics on this site.
         </p>
         <p>
-          We use the email only to contact you about Jeval Cloud early access. Entries are kept until you ask for deletion or the waitlist closes.
+          We use the email only to contact you about jeval Cloud early access. Entries are kept until you ask for deletion or the waitlist closes.
           To be removed, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> from the address you signed up with; an operator deletes the
           row with a script and confirms.
         </p>

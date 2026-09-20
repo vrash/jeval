@@ -1,7 +1,7 @@
 {
   "name": "@jeval/core",
   "version": "0.1.0",
-  "description": "Jeval core: evaluation cases, rubrics, decisions, dataset runs, reports and the judge provider interface",
+  "description": "jeval core: evaluation cases, rubrics, decisions, dataset runs, reports and the judge provider interface",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.cjs",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Operator-only admin tool for the Jeval Cloud waitlist.
+ * Operator-only admin tool for the jeval Cloud waitlist.
  *
  *   node scripts/waitlist-admin.mjs count
  *   node scripts/waitlist-admin.mjs export [--csv]

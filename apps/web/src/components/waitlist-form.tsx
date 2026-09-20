@@ -91,7 +91,7 @@ export function WaitlistForm({ source = "site", compact = false }: { source?: "s
         {!compact ? (
           <div>
             <label htmlFor={useCaseId} className="block text-sm font-medium">
-              What would you use Jeval to evaluate? <span className="font-normal text-fg-muted">(optional)</span>
+              What would you use jeval to evaluate? <span className="font-normal text-fg-muted">(optional)</span>
             </label>
             <textarea
               id={useCaseId}

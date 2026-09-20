@@ -119,7 +119,7 @@ export function starterFiles(): Record<string, string> {
     "fixtures.json": JSON.stringify(STARTER_FIXTURES, null, 2) + "\n",
     ".env.example":
       "# Required for `jeval run --mode live`. Never commit the real key.\nTYPESAFE_API_KEY=\n# Optional overrides\n# TYPESAFE_DEFAULT_MODEL=jev-latest\n# TYPESAFE_BASE_URL=https://api.typesafe.ai\n#\n# Alternative: route through Vercel AI Gateway (no TypeSafe account; billed by Vercel).\n# TYPESAFE_API_KEY=<AI Gateway API key or VERCEL_OIDC_TOKEN>\n# TYPESAFE_BASE_URL=https://ai-gateway.vercel.sh/typesafe\n# TYPESAFE_DEFAULT_MODEL=typesafe-ai/jev\n",
-    "README.md": `# Jeval project
+    "README.md": `# jeval project
 
 - \`jeval run --mode fixture\` evaluates \`dataset.jsonl\` with simulated answers from \`fixtures.json\` (offline, clearly labelled simulated).
 - \`jeval run --mode live\` sends the built judge state (input, output, policy, references, tool events) to TypeSafe's Jev. Requires TYPESAFE_API_KEY.

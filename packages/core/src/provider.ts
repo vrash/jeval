@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { JsonValue } from "./json.js";
 
-/** A single-select question. Every semantic check in Jeval is one of these. */
+/** A single-select question. Every semantic check in jeval is one of these. */
 export interface ChoiceQuestionSpec {
   /** Exact instruction the judge answers. Refer to state fields by name. */
   instructions: string;

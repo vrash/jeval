@@ -1,4 +1,4 @@
-# Jeval Cloud waitlist
+# jeval Cloud waitlist
 
 The waitlist form on the website posts to `POST /api/waitlist`, which writes to a Supabase
 Postgres table. This page describes exactly what the implementation does, for operators and for

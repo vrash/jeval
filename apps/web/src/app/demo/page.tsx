@@ -4,7 +4,7 @@ import { Demo } from "@/components/demo";
 
 export const metadata: Metadata = {
   title: "Demo",
-  description: "Inspect three fictional cases, select checks, and see how Jeval turns judge probabilities into pass, fail or review.",
+  description: "Inspect three fictional cases, select checks, and see how jeval turns judge probabilities into pass, fail or review.",
   alternates: { canonical: "/demo" },
 };
 
@@ -26,7 +26,7 @@ export default function DemoPage() {
           A <b>fail</b> is a decision: the probability of the unacceptable outcome reached the fail threshold, or an exact rule fired, such as a
           success claim contradicting a recorded tool failure. A <b>review</b> is an abstention: the references did not cover the claim, no tool
           event was recorded for a claimed action, or the distribution was too flat to decide. Treating a review as a fail would punish honest
-          uncertainty; treating it as a pass would hide problems. Jeval reports both counts separately and never folds review into a pass rate.
+          uncertainty; treating it as a pass would hide problems. jeval reports both counts separately and never folds review into a pass rate.
         </p>
         <p>
           Read more in <Link href="/docs/rubrics">Rubrics</Link> and <Link href="/docs/ci">Reports and CI gates</Link>.

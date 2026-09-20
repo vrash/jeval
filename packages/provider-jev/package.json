@@ -1,7 +1,7 @@
 {
   "name": "@jeval/provider-jev",
   "version": "0.1.0",
-  "description": "Jeval judge provider for TypeSafe's Jev via @typesafe-ai/sdk",
+  "description": "jeval judge provider for TypeSafe's Jev via @typesafe-ai/sdk",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.cjs",

@@ -35,9 +35,9 @@ export default function Page() {
         </p>
         <h2 id="scope">Out of scope in this release</h2>
         <ul>
-          <li>Running your application or agent: Jeval evaluates outputs you supply.</li>
+          <li>Running your application or agent: jeval evaluates outputs you supply.</li>
           <li>Other judge providers: compare them by importing their results.</li>
-          <li>Jeval Cloud, accounts, billing, dashboards, scheduling, a Python SDK: roadmap.</li>
+          <li>jeval Cloud, accounts, billing, dashboards, scheduling, a Python SDK: roadmap.</li>
         </ul>
         <h2 id="verified">What has been verified live</h2>
         <p>

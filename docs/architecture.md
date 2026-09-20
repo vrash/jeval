@@ -1,6 +1,6 @@
 # Architecture
 
-Jeval is a pnpm workspace of three publishable packages, one website and an examples project.
+jeval is a pnpm workspace of three publishable packages, one website and an examples project.
 
 ```
 packages/core ──────────┐

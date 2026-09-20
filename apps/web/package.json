@@ -2,7 +2,7 @@
   "name": "@jeval/web",
   "version": "0.1.0",
   "private": true,
-  "description": "Jeval website: docs, interactive demo and the Jeval Cloud waitlist",
+  "description": "jeval website: docs, interactive demo and the jeval Cloud waitlist",
   "type": "module",
   "engines": {
     "node": ">=20.9.0"

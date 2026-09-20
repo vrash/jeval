@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DOC_PAGES } from "@/lib/docs-nav";
 
-export const metadata: Metadata = { title: "Docs", description: "Jeval documentation: quickstart, cases, rubrics, CLI, CI gates, Jev integration, benchmarking and limitations.", alternates: { canonical: "/docs" } };
+export const metadata: Metadata = { title: "Docs", description: "jeval documentation: quickstart, cases, rubrics, CLI, CI gates, Jev integration, benchmarking and limitations.", alternates: { canonical: "/docs" } };
 
 export default function DocsIndex() {
   return (

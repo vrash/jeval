@@ -1,0 +1,43 @@
+name: Bug report
+description: Something in the SDK, CLI or website behaves incorrectly.
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks. Real reproductions beat descriptions; a case id, rubric id and the probabilities from the run JSON are ideal. Never paste real customer data or API keys.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: ["@jeval/core", "@jeval/provider-jev", "@jeval/cli", "website / docs", "examples", "waitlist", "other"]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, what you got.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Commands or code. For judge behaviour, include the case id, rubric id and the `answers` block from the run JSON.
+      render: shell
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Commit hash or package version, Node version, `--mode fixture` or `live`, and the model id from the run report.
+      placeholder: "main @ abc1234, Node 22.23, live, typesafe-ai/jev"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I ran `pnpm check` (or the failing command) on the current `main`.
+        - label: This report contains no API keys, secrets or real customer conversations.
+          required: true

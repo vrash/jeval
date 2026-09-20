@@ -1,0 +1,34 @@
+name: Feature request
+description: Propose a new check kind, CLI capability, import format or site improvement.
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to evaluate or catch, and what stops you today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should jeval do? Include an example case and the outcome you would expect (pass, fail, review, skipped).
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options: ["new rubric kind", "CLI command or flag", "trace import format", "reports / CI gates", "judge provider", "website / docs", "jeval cloud (planned service)", "other"]
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds you tried, or how another tool handles it.
+  - type: checkboxes
+    id: willing
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to open a pull request for this.

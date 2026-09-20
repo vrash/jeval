@@ -78,7 +78,7 @@ export function digestMessages(messages: readonly MessageLike[], budgetChars: nu
   const marker: MessageLike = {
     id: DIGEST_MARKER_ID,
     role: "system",
-    content: `[Jeval digest: ${omitted.length} of ${messages.length} messages omitted here to fit the judge's input limit (ids ${omittedIds.slice(0, 5).join(", ")}${omittedIds.length > 5 ? ", …" : ""}). The omitted turns were not shown to the judge.]`,
+    content: `[jeval digest: ${omitted.length} of ${messages.length} messages omitted here to fit the judge's input limit (ids ${omittedIds.slice(0, 5).join(", ")}${omittedIds.length > 5 ? ", …" : ""}). The omitted turns were not shown to the judge.]`,
   };
   return { messages: [...head, marker, ...tail], omittedIds };
 }
@@ -117,7 +117,7 @@ export function applyDigest(state: Record<string, JsonValue>, options: DigestOpt
       if (typeof value === "string" && value.length > 500) {
         const target = Math.max(200, value.length - over - 80);
         const removed = value.length - target;
-        out[field] = cutSafe(value, target) + ` […${removed} characters truncated by Jeval digest]`;
+        out[field] = cutSafe(value, target) + ` […${removed} characters truncated by jeval digest]`;
         record.truncated.push({ field, removedChars: removed });
         record.applied = true;
         cut = true;
@@ -139,7 +139,7 @@ export function applyDigest(state: Record<string, JsonValue>, options: DigestOpt
           const text = entry[b.key] as string;
           const target = Math.max(200, text.length - over - 80);
           const removed = text.length - target;
-          entry[b.key] = cutSafe(text, target) + ` […${removed} characters truncated by Jeval digest]`;
+          entry[b.key] = cutSafe(text, target) + ` […${removed} characters truncated by jeval digest]`;
           const copy = [...value];
           copy[b.index] = entry;
           out[field] = copy;

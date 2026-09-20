@@ -2,7 +2,7 @@
   "name": "jeval-monorepo",
   "private": true,
   "version": "0.1.0",
-  "description": "Jeval: open-source evaluations for AI outputs and agents, powered by Jev",
+  "description": "jeval: open-source evaluations for AI outputs and agents, powered by Jev",
   "license": "MIT",
   "packageManager": "pnpm@10.19.0",
   "engines": {

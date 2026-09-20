@@ -2,7 +2,7 @@
   "name": "jeval-examples",
   "private": true,
   "type": "module",
-  "description": "Example datasets, fixtures and scripts for Jeval (synthetic, provisional labels)",
+  "description": "Example datasets, fixtures and scripts for jeval (synthetic, provisional labels)",
   "scripts": {
     "sdk": "tsx sdk-example.ts",
     "cli": "jeval run --mode fixture --config jeval.config.json --html",

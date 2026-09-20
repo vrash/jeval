@@ -3,8 +3,8 @@ import { WaitlistForm } from "@/components/waitlist-form";
 import { CONTACT_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Jeval Cloud waitlist",
-  description: "Jeval Cloud is a planned managed service: hosted runs, saved history, shared dashboards and alerts. Join the waitlist.",
+  title: "jeval Cloud waitlist",
+  description: "jeval Cloud is a planned managed service: hosted runs, saved history, shared dashboards and alerts. Join the waitlist.",
   alternates: { canonical: "/cloud" },
 };
 
@@ -21,7 +21,7 @@ export default function CloudPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
       <p className="text-xs font-medium uppercase tracking-wide text-accent">Planned</p>
-      <h1 className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">Jeval Cloud</h1>
+      <h1 className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">jeval Cloud</h1>
       <p className="mt-3 max-w-2xl text-fg-muted">
         A managed service built on the open-source framework. It does not exist yet. Joining the waitlist means we may contact you about early
         access and ask what you would evaluate. Pricing is not decided.
