@@ -40,6 +40,16 @@ Checked against Vercel's current defaults on 2026-09-19: Node.js 24 LTS is the d
 
 Without the Supabase variables the site still deploys; the form shows "temporarily unavailable" and saves nothing. Without `NEXT_PUBLIC_SITE_URL` in production the canonical URL falls back to the Vercel production URL.
 
+## Bot protection and hardening
+
+Layers, from the outside in:
+
+1. **Vercel platform firewall**: DDoS mitigation is on for every plan with no configuration.
+2. **Vercel BotID (Basic, free)**: `apps/web/src/instrumentation-client.ts` registers `POST /api/waitlist` and `POST /api/demo` as protected; `next.config.ts` wraps the config with `withBotId`; both route handlers call `checkBotId()` first and answer 403 to anything that did not pass the browser challenge. Verified on 2026-09-20: curl and headless Playwright get 403, the challenge script loads from the site's own origin, and the request carries the challenge headers. Outside Vercel (local dev, `next start`, CI) `checkBotId()` reports not-a-bot, so tests keep working. Deep Analysis (Kasada) is a paid Pro add-on and is not enabled.
+3. **Content-Security-Policy** (`next.config.ts`): scripts, styles, fonts, images and connections restricted to the site's origin (inline allowed for Next.js hydration), `frame-ancestors 'none'`, `object-src 'none'`.
+4. **Endpoint controls**: origin allowlist, 4 KB body cap, honeypot, HMAC-hashed rate limits (20 per address and 3 per email per 10 minutes, shared across instances via Postgres), generic responses.
+5. **Dashboard toggles worth turning on** (Project → Firewall → Rules; not automatable from this repo without guessing the API payload): Bot Protection managed ruleset → **Challenge**, AI Bots ruleset → **Log** first, then **Deny** if you do not want AI crawlers. Both publish to production immediately and can be reverted the same way.
+
 ## Budgets before enabling live inference
 
 Set a Vercel spend limit, keep `DEMO_DAILY_REQUEST_CEILING` small, and check TypeSafe's dashboard for the key's usage. The demo route also limits each network address to 10 live requests per 10 minutes and runs at most 2 live evaluations concurrently per instance.
