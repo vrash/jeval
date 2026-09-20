@@ -26,7 +26,7 @@ for (const check of result.checks) {
 console.log(result.request?.simulated ? "simulated run" : \`model \${result.request?.model}\`, result.request?.usage);
 `;
 
-export const QUICKSTART_CLONE = `git clone <repository-url> jeval && cd jeval
+export const QUICKSTART_CLONE = `git clone https://github.com/vrash/jeval.git && cd jeval
 corepack enable            # or: npm i -g pnpm
 pnpm install
 pnpm build                 # builds @jeval/core, @jeval/provider-jev, @jeval/cli

@@ -22,7 +22,7 @@ Site: https://getjeval.com (https://jeval.vercel.app serves the same deployment)
 Requires Node ≥ 20.9 (22 recommended, see `.nvmrc`) and pnpm 10.
 
 ```bash
-git clone <repository-url> jeval && cd jeval
+git clone https://github.com/vrash/jeval.git && cd jeval
 pnpm install
 pnpm build                       # @jeval/core, @jeval/provider-jev, @jeval/cli
 pnpm --filter jeval-examples cli # simulated run on examples/data, writes examples/runs/*.html

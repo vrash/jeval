@@ -5,7 +5,7 @@ Nothing has been published yet. Package names and the domain are provisional.
 ## Before the first publish
 
 1. **Names.** On 2026-09-19 the unscoped npm name `jeval` was taken by an unrelated project (a stdin JavaScript evaluator), and the GitHub user `jeval` exists. `@jeval/core`, `@jeval/provider-jev` and `@jeval/cli` return 404 on the registry, but publishing under the `@jeval` scope requires owning that npm scope, which was not verified. Decide the scope (create the npm org or choose another, e.g. `@jeval-dev/*`) and update every `package.json`, the README, the site's `PACKAGES` constant and the docs together.
-2. **Source publication.** Make the repository public, then set `NEXT_PUBLIC_REPO_URL` so the site shows GitHub links. Until then the site deliberately shows no repository link.
+2. **Source publication.** Done 2026-09-20: https://github.com/vrash/jeval is public and `NEXT_PUBLIC_REPO_URL` is set on Vercel.
 3. **Maintainer identity.** `LICENSE` names "vrash and jeval contributors" from the local git config. Update if the project moves to an organisation.
 4. **Verify from tarballs.** `pnpm verify:packed` packs the three packages, installs them into a fresh npm project and runs the CLI and both module formats.
 5. **Live smoke test.** Done 2026-09-19 through Vercel AI Gateway (model id `typesafe-ai/jev`, 620 input tokens, 1.17 s). Repeat against the direct TypeSafe API once a key exists so a versioned `jev-1.x` id is on record.
@@ -26,7 +26,7 @@ git tag v0.1.0 && git push --tags
 ## Launch checklist
 
 - [ ] npm scope owned; package names final; `npm view` confirms no collisions.
-- [ ] Repository public; `NEXT_PUBLIC_REPO_URL` set; README clone URL filled in.
+- [x] Repository public; `NEXT_PUBLIC_REPO_URL` set; README clone URL filled in (2026-09-20).
 - [x] One live Jev smoke test recorded (2026-09-19, gateway; direct-API run still to do).
 - [ ] Supabase migration applied; test signup persisted and deleted with the admin script.
 - [ ] Production `NEXT_PUBLIC_SITE_URL` set to the real domain; robots and sitemap verified on the live URL.
