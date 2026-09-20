@@ -6,6 +6,8 @@ import { WaitlistForm } from "@/components/waitlist-form";
 import { SDK_EXAMPLE } from "@/lib/snippets";
 import { REPO_URL, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import { JsonLd } from "@/components/json-ld";
+import { Pipeline } from "@/components/pipeline";
+import { Terminal } from "@/components/terminal";
 
 export default function HomePage() {
   const structuredData = [
@@ -55,6 +57,46 @@ export default function HomePage() {
           <Link href="/demo" className="px-2 py-2.5 text-sm font-medium text-accent underline underline-offset-4 hover:text-accent-strong">
             Try the demo
           </Link>
+        </div>
+        <div className="mt-14">
+          <Pipeline />
+        </div>
+      </section>
+
+      <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6" aria-labelledby="cycle">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-wide text-accent">One cycle, end to end</p>
+            <h2 id="cycle" className="mt-2 text-2xl font-semibold tracking-tight">
+              From last week&rsquo;s traffic to a release gate
+            </h2>
+            <p className="mt-3 text-fg-muted">
+              Import the conversations your app already logged, see what a run will cost before it starts, judge a sample, label the uncertain
+              ones yourself, then compare against yesterday&rsquo;s run. A failure that appears on a stable case id blocks the release; a{" "}
+              <StatusBadge status="review" size="sm" /> never counts as a pass.
+            </p>
+            <ul className="mt-5 space-y-2 text-sm text-fg-muted">
+              <li>Bring your own TypeSafe key, or route through Vercel AI Gateway with no TypeSafe account.</li>
+              <li>Every judgment keeps its probabilities, the rule applied in code and the evidence it saw.</li>
+              <li>Nothing is sent anywhere until you choose live mode; fixture mode runs offline and says so.</li>
+            </ul>
+          </div>
+          <Terminal />
+        </div>
+      </section>
+
+      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6" aria-labelledby="can">
+        <h2 id="can" className="text-2xl font-semibold tracking-tight">
+          What you can do today
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {CAPABILITIES.map((c, i) => (
+            <div key={c.title} className="rise flex flex-col rounded-xl border border-line bg-bg-elevated p-5" style={{ ["--i" as string]: i }}>
+              <h3 className="font-semibold">{c.title}</h3>
+              <p className="mt-2 flex-1 text-sm text-fg-muted">{c.body}</p>
+              <code className="mt-4 block overflow-x-auto whitespace-nowrap rounded-md border border-line bg-bg-code px-2.5 py-1.5 font-mono text-xs">{c.code}</code>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -175,6 +217,33 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6" aria-labelledby="recorded">
+        <div className="rounded-xl border border-line p-6 sm:p-8">
+          <p className="text-xs font-medium uppercase tracking-wide text-accent">One recorded live run, not a benchmark claim</p>
+          <h2 id="recorded" className="mt-2 text-2xl font-semibold tracking-tight">
+            What Jev did on the example held-out set
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-4">
+            {[
+              ["12 / 0 / 0 / 13", "true positives / false positives / false negatives / true negatives on 25 binary labels"],
+              ["23 of 25", "abstained when the label said the case was undecidable"],
+              ["16,919 tokens", "input for 10 cases, about $0.0007 at the documented rate"],
+              ["344 ms", "median request latency, one run"],
+            ].map(([n, d]) => (
+              <div key={n}>
+                <p className="text-2xl font-semibold tabular-nums">{n}</p>
+                <p className="mt-1 text-sm text-fg-muted">{d}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-fg-muted">
+            Synthetic labels, ten cases, one day, two runs that disagreed on a few borderline checks. It shows the framework working end to end
+            against real Jev; it says nothing about your data. Full output and every disagreement are in the repository&rsquo;s{" "}
+            <code className="font-mono text-xs">examples/benchmark.live.md</code>. <Link href="/docs/benchmark" className="text-accent underline underline-offset-4">How to measure it on yours</Link>.
+          </p>
+        </div>
+      </section>
+
       <section className="mx-auto mt-20 max-w-3xl px-4 sm:px-6" aria-labelledby="faq">
         <h2 id="faq" className="text-2xl font-semibold tracking-tight">
           Questions
@@ -201,6 +270,39 @@ export default function HomePage() {
     </>
   );
 }
+
+const CAPABILITIES: Array<{ title: string; body: string; code: string }> = [
+  {
+    title: "Evaluate what you already log",
+    body: "Import OpenAI-style chat transcripts, OpenTelemetry GenAI spans, Langfuse or LangWatch exports, or map any JSON. Tool calls become tool events.",
+    code: "jeval capture traces.jsonl -o dataset.jsonl",
+  },
+  {
+    title: "Five checks that compose with code",
+    body: "Policy compliance, claim support against references, tool-backed action claims, required escalations, and custom criteria. Exact conditions are checked in code, the judge answers one narrow question.",
+    code: '{ "kind": "tool-claim", "params": { "toolName": "book_appointment" } }',
+  },
+  {
+    title: "Know the cost before you run",
+    body: "Estimate requests, input tokens and price from the exact state a run would send. Refuse to start above a budget. Sample five cases with the judged state beside each verdict.",
+    code: "jeval run --mode live --limit 5 --show --max-usd 0.50",
+  },
+  {
+    title: "Review, not guess",
+    body: "Missing evidence, flat probabilities and uncovered claims come back as review. Walk them interactively and record human labels that the benchmark reports by source.",
+    code: "jeval review runs/live.json --labels human.jsonl",
+  },
+  {
+    title: "Regressions by stable id",
+    body: "Compare two runs case by case and rubric by rubric: new failures, resolved failures, new reviews. Different datasets, rubric versions, models or modes are flagged, never silently merged.",
+    code: "jeval compare runs/a.json runs/b.json --fail-on-new",
+  },
+  {
+    title: "Gates you can trust in CI",
+    body: "Exit 0 only when the configured gates are met and every required check reached a decision. Review, errors, an empty dataset or a simulated run cannot yield a clean pass.",
+    code: "jeval run --mode live --ci   # 0 ok · 1 gate failed · 2 incomplete",
+  },
+];
 
 const FAQ: Array<[string, React.ReactNode]> = [
   [
