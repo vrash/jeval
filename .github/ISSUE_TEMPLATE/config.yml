@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or discussion
+    url: https://github.com/vrash/jeval/discussions
+    about: Ask how to use jeval, share rubrics, or discuss judge behaviour.
+  - name: Security issue
+    url: https://github.com/vrash/jeval/security/advisories/new
+    about: Report a vulnerability privately. Do not open a public issue.

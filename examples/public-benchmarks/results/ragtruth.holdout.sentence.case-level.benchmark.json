@@ -1,0 +1,173 @@
+{
+  "generatedAt": "2026-09-20T10:02:29.874Z",
+  "run": {
+    "runId": "0bbf7708-27f1-49c6-92a0-83911c641f83",
+    "mode": "live",
+    "simulated": false,
+    "model": "typesafe-ai/jev"
+  },
+  "labelsPath": "data/ragtruth.holdout.labels.jsonl",
+  "result": {
+    "sampleCount": 300,
+    "labelsWithoutPrediction": 0,
+    "predictionsWithoutLabel": 2113,
+    "binaryLabelCount": 300,
+    "undecidableLabelCount": 0,
+    "labelSources": {
+      "human": 300
+    },
+    "failureDetection": {
+      "decided": 219,
+      "confusion": {
+        "truePositive": 102,
+        "falsePositive": 30,
+        "falseNegative": 5,
+        "trueNegative": 82
+      },
+      "precision": 0.7727272727272727,
+      "recall": 0.9532710280373832,
+      "f1": 0.8535564853556485
+    },
+    "abstention": {
+      "review": 81,
+      "skipped": 0,
+      "error": 0,
+      "reviewOnLabelledFail": 43,
+      "reviewOnLabelledPass": 38,
+      "reviewRateOnBinary": 0.27
+    },
+    "undecidable": {
+      "agree": 0,
+      "predictedDecided": 0,
+      "error": 0,
+      "agreementRate": null
+    },
+    "executionErrors": 0,
+    "matrix": {
+      "fail": {
+        "pass": 5,
+        "fail": 102,
+        "review": 43,
+        "skipped": 0,
+        "error": 0
+      },
+      "pass": {
+        "pass": 82,
+        "fail": 30,
+        "review": 38,
+        "skipped": 0,
+        "error": 0
+      }
+    },
+    "automation": {
+      "sample": 300,
+      "points": [
+        {
+          "threshold": 0.5,
+          "decided": 300,
+          "decidedShare": 1,
+          "accuracy": 0.7833333333333333,
+          "failPrecision": 0.7202072538860104,
+          "failRecall": 0.9266666666666666
+        },
+        {
+          "threshold": 0.55,
+          "decided": 291,
+          "decidedShare": 0.97,
+          "accuracy": 0.7903780068728522,
+          "failPrecision": 0.7287234042553191,
+          "failRecall": 0.9133333333333333
+        },
+        {
+          "threshold": 0.6,
+          "decided": 285,
+          "decidedShare": 0.95,
+          "accuracy": 0.7929824561403509,
+          "failPrecision": 0.7311827956989247,
+          "failRecall": 0.9066666666666666
+        },
+        {
+          "threshold": 0.65,
+          "decided": 272,
+          "decidedShare": 0.9066666666666666,
+          "accuracy": 0.7941176470588235,
+          "failPrecision": 0.7288135593220338,
+          "failRecall": 0.86
+        },
+        {
+          "threshold": 0.7,
+          "decided": 262,
+          "decidedShare": 0.8733333333333333,
+          "accuracy": 0.8129770992366412,
+          "failPrecision": 0.7441860465116279,
+          "failRecall": 0.8533333333333334
+        },
+        {
+          "threshold": 0.75,
+          "decided": 250,
+          "decidedShare": 0.8333333333333334,
+          "accuracy": 0.832,
+          "failPrecision": 0.7730061349693251,
+          "failRecall": 0.84
+        },
+        {
+          "threshold": 0.8,
+          "decided": 236,
+          "decidedShare": 0.7866666666666666,
+          "accuracy": 0.8305084745762712,
+          "failPrecision": 0.7784810126582279,
+          "failRecall": 0.82
+        },
+        {
+          "threshold": 0.85,
+          "decided": 212,
+          "decidedShare": 0.7066666666666667,
+          "accuracy": 0.8349056603773585,
+          "failPrecision": 0.785234899328859,
+          "failRecall": 0.78
+        },
+        {
+          "threshold": 0.9,
+          "decided": 181,
+          "decidedShare": 0.6033333333333334,
+          "accuracy": 0.861878453038674,
+          "failPrecision": 0.8217054263565892,
+          "failRecall": 0.7066666666666667
+        },
+        {
+          "threshold": 0.95,
+          "decided": 151,
+          "decidedShare": 0.5033333333333333,
+          "accuracy": 0.8874172185430463,
+          "failPrecision": 0.8571428571428571,
+          "failRecall": 0.6
+        }
+      ],
+      "suggestion": {
+        "targetAccuracy": 0.9,
+        "threshold": null,
+        "reason": "no threshold between 0.5 and 0.95 reaches 90% accuracy with at least 20 decided checks"
+      }
+    },
+    "calibration": {
+      "computed": false,
+      "reason": "only 4 binary-labelled checks carry a single deciding probability; at least 20 are needed",
+      "sample": 4
+    },
+    "latencyMs": {
+      "count": 300,
+      "mean": 398.7966666666667,
+      "p50": 377,
+      "p95": 565,
+      "max": 854
+    },
+    "usage": {
+      "requests": 300,
+      "inputTokens": 839659,
+      "outputTokens": 95344
+    },
+    "simulated": false,
+    "mode": "live",
+    "model": "typesafe-ai/jev"
+  }
+}

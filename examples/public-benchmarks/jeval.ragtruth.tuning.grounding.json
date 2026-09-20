@@ -1,0 +1,16 @@
+{
+  "dataset": "./data/ragtruth.tuning.jsonl",
+  "rubrics": "./rubrics.grounding.json",
+  "output": "./runs",
+  "provider": {
+    "model": "none"
+  },
+  "thresholds": {
+    "pass": 0.75,
+    "fail": 0.5
+  },
+  "concurrency": 6,
+  "timeoutMs": 30000,
+  "maxAttempts": 3,
+  "provenance": "ragtruth.tuning from public datasets; see README.md"
+}

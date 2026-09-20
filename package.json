@@ -1,0 +1,42 @@
+{
+  "name": "jeval-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "jeval: open-source evaluations for AI outputs and agents, powered by Jev",
+  "license": "MIT",
+  "packageManager": "pnpm@10.19.0",
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "build": "pnpm -r --filter './packages/*' build",
+    "build:web": "pnpm --filter @jeval/web build",
+    "dev:web": "pnpm --filter @jeval/web dev",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r --filter './packages/*' test",
+    "test:web": "pnpm --filter @jeval/web test",
+    "test:e2e": "pnpm --filter @jeval/web test:e2e",
+    "test:live": "pnpm --filter @jeval/provider-jev test:live",
+    "check": "pnpm lint && pnpm build && pnpm typecheck && pnpm test",
+    "example:sdk": "pnpm --filter jeval-examples sdk",
+    "example:cli": "pnpm --filter jeval-examples cli",
+    "verify:packed": "bash scripts/verify-packed.sh",
+    "waitlist:export": "node scripts/waitlist-admin.mjs export",
+    "waitlist:delete": "node scripts/waitlist-admin.mjs delete"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.11.0",
+    "globals": "17.12.0",
+    "prettier": "3.9.8",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.70.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild@<0.28.1": ">=0.28.1"
+    }
+  }
+}

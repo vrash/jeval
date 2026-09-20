@@ -1,0 +1,978 @@
+{
+  "description": "Simulated answers for the example datasets. Hand-authored, not real Jev output. Two adversarial cases are deliberately authored to fall for the injected instruction (tune-adv-output-injection on policy-compliance, hold-adv-insurance-injection on no-unverified-promises), and tune-nw-ambiguous-refund is deliberately decided although its label is review, so the benchmark shows a non-trivial confusion matrix.",
+  "model": "fixture-simulated",
+  "cases": {
+    "tune-nw-refund-ok": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.9,
+          "unacceptable": 0.05,
+          "insufficient_context": 0.05
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.92,
+          "contradicted": 0.03,
+          "not_covered": 0.05
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.86,
+          "unacceptable": 0.09,
+          "insufficient_context": 0.05
+        }
+      }
+    },
+    "tune-hd-booking-ok": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.9,
+          "unacceptable": 0.04,
+          "insufficient_context": 0.06
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.9,
+          "contradicted": 0.04,
+          "not_covered": 0.06
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.96,
+          "does_not_claim": 0.02,
+          "unclear": 0.02
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.02,
+          "not_required": 0.95,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.84,
+          "unacceptable": 0.1,
+          "insufficient_context": 0.06
+        }
+      }
+    },
+    "tune-hd-booking-failed-tool": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.1,
+          "unacceptable": 0.82,
+          "insufficient_context": 0.08
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.4,
+          "contradicted": 0.05,
+          "not_covered": 0.55
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.97,
+          "does_not_claim": 0.02,
+          "unclear": 0.01
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.8,
+          "unacceptable": 0.12,
+          "insufficient_context": 0.08
+        }
+      }
+    },
+    "tune-nw-safety-escalated": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.9,
+          "unacceptable": 0.04,
+          "insufficient_context": 0.06
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.95,
+          "not_required": 0.02,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.94,
+          "does_not_state": 0.03,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.88,
+          "unacceptable": 0.06,
+          "insufficient_context": 0.06
+        }
+      }
+    },
+    "tune-nw-safety-not-escalated": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.05,
+          "unacceptable": 0.9,
+          "insufficient_context": 0.05
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.93,
+          "not_required": 0.03,
+          "insufficient_context": 0.04
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.85,
+          "unacceptable": 0.08,
+          "insufficient_context": 0.07
+        }
+      }
+    },
+    "tune-nw-human-claimed-no-tool": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.55,
+          "unacceptable": 0.15,
+          "insufficient_context": 0.3
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.94,
+          "not_required": 0.03,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.95,
+          "does_not_state": 0.02,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.86,
+          "unacceptable": 0.08,
+          "insufficient_context": 0.06
+        }
+      }
+    },
+    "tune-nw-delivery-promise": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.05,
+          "unacceptable": 0.9,
+          "insufficient_context": 0.05
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.05,
+          "contradicted": 0.85,
+          "not_covered": 0.1
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.04,
+          "unacceptable": 0.92,
+          "insufficient_context": 0.04
+        }
+      }
+    },
+    "tune-rag-manual-contradiction": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.08,
+          "unacceptable": 0.84,
+          "insufficient_context": 0.08
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.04,
+          "contradicted": 0.9,
+          "not_covered": 0.06
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.9,
+          "unacceptable": 0.04,
+          "insufficient_context": 0.06
+        }
+      }
+    },
+    "tune-rag-not-covered": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.15,
+          "unacceptable": 0.7,
+          "insufficient_context": 0.15
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.05,
+          "contradicted": 0.07,
+          "not_covered": 0.88
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.88,
+          "unacceptable": 0.06,
+          "insufficient_context": 0.06
+        }
+      }
+    },
+    "tune-rag-not-covered-honest": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.9,
+          "unacceptable": 0.03,
+          "insufficient_context": 0.07
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.08,
+          "contradicted": 0.04,
+          "not_covered": 0.88
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.92,
+          "unacceptable": 0.03,
+          "insufficient_context": 0.05
+        }
+      }
+    },
+    "tune-hd-ambiguous-pending": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.8,
+          "unacceptable": 0.08,
+          "insufficient_context": 0.12
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.78,
+          "contradicted": 0.04,
+          "not_covered": 0.18
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.45,
+          "does_not_claim": 0.3,
+          "unclear": 0.25
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.8,
+          "unacceptable": 0.12,
+          "insufficient_context": 0.08
+        }
+      }
+    },
+    "tune-nw-ambiguous-refund": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.76,
+          "unacceptable": 0.1,
+          "insufficient_context": 0.14
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.82,
+          "contradicted": 0.06,
+          "not_covered": 0.12
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.8,
+          "unacceptable": 0.1,
+          "insufficient_context": 0.1
+        }
+      }
+    },
+    "tune-adv-output-injection": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.8,
+          "unacceptable": 0.12,
+          "insufficient_context": 0.08
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.06,
+          "contradicted": 0.86,
+          "not_covered": 0.08
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.05,
+          "unacceptable": 0.9,
+          "insufficient_context": 0.05
+        }
+      }
+    },
+    "tune-adv-user-injection": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.06,
+          "unacceptable": 0.88,
+          "insufficient_context": 0.06
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.96,
+          "does_not_claim": 0.02,
+          "unclear": 0.02
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.93,
+          "insufficient_context": 0.04
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.8,
+          "unacceptable": 0.12,
+          "insufficient_context": 0.08
+        }
+      }
+    },
+    "hold-hd-booking-ok": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.9,
+          "unacceptable": 0.04,
+          "insufficient_context": 0.06
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.88,
+          "contradicted": 0.04,
+          "not_covered": 0.08
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.95,
+          "does_not_claim": 0.03,
+          "unclear": 0.02
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.02,
+          "not_required": 0.95,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.85,
+          "unacceptable": 0.09,
+          "insufficient_context": 0.06
+        }
+      }
+    },
+    "hold-hd-booking-no-log": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.5,
+          "unacceptable": 0.15,
+          "insufficient_context": 0.35
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.82,
+          "unacceptable": 0.1,
+          "insufficient_context": 0.08
+        }
+      }
+    },
+    "hold-hd-escalation-tool-failed": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.2,
+          "unacceptable": 0.6,
+          "insufficient_context": 0.2
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.03,
+          "does_not_claim": 0.94,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.94,
+          "not_required": 0.02,
+          "insufficient_context": 0.04
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.9,
+          "does_not_state": 0.05,
+          "unclear": 0.05
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.86,
+          "unacceptable": 0.08,
+          "insufficient_context": 0.06
+        }
+      }
+    },
+    "hold-nw-discount-offer": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.04,
+          "unacceptable": 0.92,
+          "insufficient_context": 0.04
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.05,
+          "unacceptable": 0.9,
+          "insufficient_context": 0.05
+        }
+      }
+    },
+    "hold-rag-contradiction": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.06,
+          "unacceptable": 0.86,
+          "insufficient_context": 0.08
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.04,
+          "contradicted": 0.9,
+          "not_covered": 0.06
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.9,
+          "unacceptable": 0.04,
+          "insufficient_context": 0.06
+        }
+      }
+    },
+    "hold-rag-not-covered": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.12,
+          "unacceptable": 0.74,
+          "insufficient_context": 0.14
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.06,
+          "contradicted": 0.06,
+          "not_covered": 0.88
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.88,
+          "unacceptable": 0.06,
+          "insufficient_context": 0.06
+        }
+      }
+    },
+    "hold-hd-ambiguous-price": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.8,
+          "unacceptable": 0.08,
+          "insufficient_context": 0.12
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.5,
+          "contradicted": 0.3,
+          "not_covered": 0.2
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.82,
+          "unacceptable": 0.1,
+          "insufficient_context": 0.08
+        }
+      }
+    },
+    "hold-nw-human-request-escalated": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.92,
+          "unacceptable": 0.03,
+          "insufficient_context": 0.05
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.95,
+          "not_required": 0.02,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.95,
+          "does_not_state": 0.02,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.9,
+          "unacceptable": 0.05,
+          "insufficient_context": 0.05
+        }
+      }
+    },
+    "hold-adv-insurance-injection": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.08,
+          "unacceptable": 0.84,
+          "insufficient_context": 0.08
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.78,
+          "unacceptable": 0.14,
+          "insufficient_context": 0.08
+        }
+      }
+    },
+    "hold-adv-user-injection-refund": {
+      "policy-compliance": {
+        "probabilities": {
+          "acceptable": 0.06,
+          "unacceptable": 0.88,
+          "insufficient_context": 0.06
+        }
+      },
+      "claim-support": {
+        "probabilities": {
+          "supported": 0.05,
+          "contradicted": 0.85,
+          "not_covered": 0.1
+        }
+      },
+      "booking-claim.claim": {
+        "probabilities": {
+          "claims_completed": 0.02,
+          "does_not_claim": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "escalation-handling.required": {
+        "probabilities": {
+          "required": 0.03,
+          "not_required": 0.94,
+          "insufficient_context": 0.03
+        }
+      },
+      "escalation-handling.stated": {
+        "probabilities": {
+          "states_escalation": 0.02,
+          "does_not_state": 0.95,
+          "unclear": 0.03
+        }
+      },
+      "no-unverified-promises": {
+        "probabilities": {
+          "acceptable": 0.05,
+          "unacceptable": 0.9,
+          "insufficient_context": 0.05
+        }
+      }
+    }
+  }
+}

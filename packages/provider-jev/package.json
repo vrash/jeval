@@ -1,0 +1,40 @@
+{
+  "name": "@jeval/provider-jev",
+  "version": "0.1.0",
+  "description": "jeval judge provider for TypeSafe's Jev via @typesafe-ai/sdk",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "sideEffects": false,
+  "engines": { "node": ">=20.9.0" },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "test:live": "JEVAL_LIVE=1 vitest run --config vitest.live.config.ts"
+  },
+  "dependencies": {
+    "@jeval/core": "workspace:*",
+    "@typesafe-ai/sdk": "0.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.2",
+    "tsup": "8.5.1",
+    "typescript": "5.9.3",
+    "vitest": "5.0.1"
+  },
+  "peerDependencies": {},
+  "keywords": ["jeval", "jev", "typesafe", "evaluation"],
+  "publishConfig": { "access": "public" }
+}

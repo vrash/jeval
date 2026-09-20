@@ -1,0 +1,14 @@
+[
+  {
+    "id": "claim-support",
+    "version": "1.1.0-sentence",
+    "kind": "claim-support",
+    "severity": "major",
+    "description": "Every sentence of the response is supported by the supplied reference material; judged sentence by sentence in one request.",
+    "criterion": "Is every factual statement in the response stated in, or directly entailed by, the reference material? A single statement that the references contradict counts as contradicted; a statement the references do not mention counts as not covered.",
+    "params": {
+      "uncoveredIs": "fail",
+      "granularity": "sentence"
+    }
+  }
+]

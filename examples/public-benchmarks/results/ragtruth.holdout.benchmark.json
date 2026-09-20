@@ -1,0 +1,221 @@
+{
+  "generatedAt": "2026-09-20T09:40:37.574Z",
+  "run": {
+    "runId": "2a34f606-20b9-4bc9-a152-c40aa06ffddf",
+    "mode": "live",
+    "simulated": false,
+    "model": "typesafe-ai/jev"
+  },
+  "labelsPath": "data/ragtruth.holdout.labels.jsonl",
+  "result": {
+    "sampleCount": 300,
+    "labelsWithoutPrediction": 0,
+    "predictionsWithoutLabel": 0,
+    "binaryLabelCount": 300,
+    "undecidableLabelCount": 0,
+    "labelSources": {
+      "human": 300
+    },
+    "failureDetection": {
+      "decided": 191,
+      "confusion": {
+        "truePositive": 72,
+        "falsePositive": 15,
+        "falseNegative": 20,
+        "trueNegative": 84
+      },
+      "precision": 0.8275862068965517,
+      "recall": 0.782608695652174,
+      "f1": 0.8044692737430168
+    },
+    "abstention": {
+      "review": 109,
+      "skipped": 0,
+      "error": 0,
+      "reviewOnLabelledFail": 58,
+      "reviewOnLabelledPass": 51,
+      "reviewRateOnBinary": 0.36333333333333334
+    },
+    "undecidable": {
+      "agree": 0,
+      "predictedDecided": 0,
+      "error": 0,
+      "agreementRate": null
+    },
+    "executionErrors": 0,
+    "matrix": {
+      "fail": {
+        "pass": 20,
+        "fail": 72,
+        "review": 58,
+        "skipped": 0,
+        "error": 0
+      },
+      "pass": {
+        "pass": 84,
+        "fail": 15,
+        "review": 51,
+        "skipped": 0,
+        "error": 0
+      }
+    },
+    "automation": {
+      "sample": 300,
+      "points": [
+        {
+          "threshold": 0.5,
+          "decided": 300,
+          "decidedShare": 1,
+          "accuracy": 0.7166666666666667,
+          "failPrecision": 0.7210884353741497,
+          "failRecall": 0.7066666666666667
+        },
+        {
+          "threshold": 0.55,
+          "decided": 278,
+          "decidedShare": 0.9266666666666666,
+          "accuracy": 0.7410071942446043,
+          "failPrecision": 0.7611940298507462,
+          "failRecall": 0.68
+        },
+        {
+          "threshold": 0.6,
+          "decided": 264,
+          "decidedShare": 0.88,
+          "accuracy": 0.7575757575757576,
+          "failPrecision": 0.7829457364341085,
+          "failRecall": 0.6733333333333333
+        },
+        {
+          "threshold": 0.65,
+          "decided": 246,
+          "decidedShare": 0.82,
+          "accuracy": 0.7845528455284553,
+          "failPrecision": 0.8099173553719008,
+          "failRecall": 0.6533333333333333
+        },
+        {
+          "threshold": 0.7,
+          "decided": 231,
+          "decidedShare": 0.77,
+          "accuracy": 0.8095238095238095,
+          "failPrecision": 0.8205128205128205,
+          "failRecall": 0.64
+        },
+        {
+          "threshold": 0.75,
+          "decided": 212,
+          "decidedShare": 0.7066666666666667,
+          "accuracy": 0.8207547169811321,
+          "failPrecision": 0.8333333333333334,
+          "failRecall": 0.6
+        },
+        {
+          "threshold": 0.8,
+          "decided": 190,
+          "decidedShare": 0.6333333333333333,
+          "accuracy": 0.8157894736842105,
+          "failPrecision": 0.826530612244898,
+          "failRecall": 0.54
+        },
+        {
+          "threshold": 0.85,
+          "decided": 167,
+          "decidedShare": 0.5566666666666666,
+          "accuracy": 0.8622754491017964,
+          "failPrecision": 0.8571428571428571,
+          "failRecall": 0.52
+        },
+        {
+          "threshold": 0.9,
+          "decided": 130,
+          "decidedShare": 0.43333333333333335,
+          "accuracy": 0.8923076923076924,
+          "failPrecision": 0.8904109589041096,
+          "failRecall": 0.43333333333333335
+        },
+        {
+          "threshold": 0.95,
+          "decided": 89,
+          "decidedShare": 0.2966666666666667,
+          "accuracy": 0.9550561797752809,
+          "failPrecision": 0.9444444444444444,
+          "failRecall": 0.34
+        }
+      ],
+      "suggestion": {
+        "targetAccuracy": 0.9,
+        "threshold": 0.95,
+        "decidedShare": 0.2966666666666667,
+        "accuracy": 0.9550561797752809
+      }
+    },
+    "calibration": {
+      "computed": true,
+      "bins": [
+        {
+          "range": [
+            0,
+            0.2
+          ],
+          "count": 191,
+          "meanPredicted": 0.06178010471204183,
+          "observedFailRate": 0.3507853403141361
+        },
+        {
+          "range": [
+            0.2,
+            0.4
+          ],
+          "count": 49,
+          "meanPredicted": 0.2855102040816327,
+          "observedFailRate": 0.6326530612244898
+        },
+        {
+          "range": [
+            0.4,
+            0.6
+          ],
+          "count": 20,
+          "meanPredicted": 0.4955,
+          "observedFailRate": 0.75
+        },
+        {
+          "range": [
+            0.6,
+            0.8
+          ],
+          "count": 15,
+          "meanPredicted": 0.7086666666666667,
+          "observedFailRate": 0.8666666666666667
+        },
+        {
+          "range": [
+            0.8,
+            1
+          ],
+          "count": 25,
+          "meanPredicted": 0.9404,
+          "observedFailRate": 0.96
+        }
+      ],
+      "expectedCalibrationError": 0.26720000000000005,
+      "sample": 300
+    },
+    "latencyMs": {
+      "count": 300,
+      "mean": 395.02,
+      "p50": 353,
+      "p95": 634,
+      "max": 2052
+    },
+    "usage": {
+      "requests": 300,
+      "inputTokens": 398501,
+      "outputTokens": 13893
+    },
+    "simulated": false,
+    "mode": "live",
+    "model": "typesafe-ai/jev"
+  }
+}

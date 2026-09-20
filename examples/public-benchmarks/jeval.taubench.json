@@ -1,0 +1,24 @@
+{
+  "dataset": "./data/taubench.jsonl",
+  "rubrics": "./rubrics.agents.json",
+  "output": "./runs",
+  "provider": {
+    "model": "typesafe-ai/jev"
+  },
+  "thresholds": {
+    "pass": 0.75,
+    "fail": 0.5
+  },
+  "concurrency": 2,
+  "timeoutMs": 45000,
+  "maxAttempts": 6,
+  "digest": {
+    "maxChars": 110000
+  },
+  "pricing": {
+    "inputPerMillionTokensUsd": 0.042,
+    "asOf": "2026-09-19",
+    "source": "https://docs.typesafe.ai/models"
+  },
+  "provenance": "tau-bench gpt-4o trajectories (airline/retail), no per-check human labels"
+}

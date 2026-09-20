@@ -1,0 +1,26 @@
+node_modules/
+dist/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+# Generated evaluation output (keep reports local)
+.jeval/
+runs/
+*.run.json
+reports/*.html
+playwright-report/
+test-results/
+apps/web/.vercel/
+.vercel/
+*.tgz
+.DS_Store
+supabase/.temp/
+
+# Public benchmark inputs are large; rebuild with examples/public-benchmarks/build.mjs
+examples/public-benchmarks/raw/
+examples/public-benchmarks/data/
+examples/public-benchmarks/.env

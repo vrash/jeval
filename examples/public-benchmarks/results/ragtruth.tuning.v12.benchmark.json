@@ -1,0 +1,221 @@
+{
+  "generatedAt": "2026-09-20T10:40:34.136Z",
+  "run": {
+    "runId": "a986779b-0bd4-438f-bb23-586cd7803e14",
+    "mode": "live",
+    "simulated": false,
+    "model": "typesafe-ai/jev"
+  },
+  "labelsPath": "data/ragtruth.tuning.sentence-labels.jsonl",
+  "result": {
+    "sampleCount": 969,
+    "labelsWithoutPrediction": 6,
+    "predictionsWithoutLabel": 0,
+    "binaryLabelCount": 969,
+    "undecidableLabelCount": 0,
+    "labelSources": {
+      "human": 969
+    },
+    "failureDetection": {
+      "decided": 794,
+      "confusion": {
+        "truePositive": 105,
+        "falsePositive": 41,
+        "falseNegative": 15,
+        "trueNegative": 633
+      },
+      "precision": 0.7191780821917808,
+      "recall": 0.875,
+      "f1": 0.7894736842105263
+    },
+    "abstention": {
+      "review": 174,
+      "skipped": 0,
+      "error": 1,
+      "reviewOnLabelledFail": 46,
+      "reviewOnLabelledPass": 128,
+      "reviewRateOnBinary": 0.17956656346749225
+    },
+    "undecidable": {
+      "agree": 0,
+      "predictedDecided": 0,
+      "error": 0,
+      "agreementRate": null
+    },
+    "executionErrors": 1,
+    "matrix": {
+      "fail": {
+        "pass": 15,
+        "fail": 105,
+        "review": 46,
+        "skipped": 0,
+        "error": 1
+      },
+      "pass": {
+        "pass": 633,
+        "fail": 41,
+        "review": 128,
+        "skipped": 0,
+        "error": 0
+      }
+    },
+    "automation": {
+      "sample": 968,
+      "points": [
+        {
+          "threshold": 0.5,
+          "decided": 968,
+          "decidedShare": 1,
+          "accuracy": 0.868801652892562,
+          "failPrecision": 0.5789473684210527,
+          "failRecall": 0.8614457831325302
+        },
+        {
+          "threshold": 0.55,
+          "decided": 952,
+          "decidedShare": 0.9834710743801653,
+          "accuracy": 0.8739495798319328,
+          "failPrecision": 0.5867768595041323,
+          "failRecall": 0.8554216867469879
+        },
+        {
+          "threshold": 0.6,
+          "decided": 917,
+          "decidedShare": 0.9473140495867769,
+          "accuracy": 0.8833151581243184,
+          "failPrecision": 0.6036036036036037,
+          "failRecall": 0.8072289156626506
+        },
+        {
+          "threshold": 0.65,
+          "decided": 885,
+          "decidedShare": 0.9142561983471075,
+          "accuracy": 0.896045197740113,
+          "failPrecision": 0.6323529411764706,
+          "failRecall": 0.7771084337349398
+        },
+        {
+          "threshold": 0.7,
+          "decided": 863,
+          "decidedShare": 0.8915289256198347,
+          "accuracy": 0.9003476245654692,
+          "failPrecision": 0.6410256410256411,
+          "failRecall": 0.7530120481927711
+        },
+        {
+          "threshold": 0.75,
+          "decided": 835,
+          "decidedShare": 0.862603305785124,
+          "accuracy": 0.9053892215568863,
+          "failPrecision": 0.6577540106951871,
+          "failRecall": 0.7409638554216867
+        },
+        {
+          "threshold": 0.8,
+          "decided": 799,
+          "decidedShare": 0.8254132231404959,
+          "accuracy": 0.9161451814768461,
+          "failPrecision": 0.686046511627907,
+          "failRecall": 0.7108433734939759
+        },
+        {
+          "threshold": 0.85,
+          "decided": 764,
+          "decidedShare": 0.7892561983471075,
+          "accuracy": 0.9214659685863874,
+          "failPrecision": 0.7006369426751592,
+          "failRecall": 0.6626506024096386
+        },
+        {
+          "threshold": 0.9,
+          "decided": 712,
+          "decidedShare": 0.7355371900826446,
+          "accuracy": 0.9311797752808989,
+          "failPrecision": 0.7361111111111112,
+          "failRecall": 0.6385542168674698
+        },
+        {
+          "threshold": 0.95,
+          "decided": 635,
+          "decidedShare": 0.65599173553719,
+          "accuracy": 0.937007874015748,
+          "failPrecision": 0.7380952380952381,
+          "failRecall": 0.5602409638554217
+        }
+      ],
+      "suggestion": {
+        "targetAccuracy": 0.9,
+        "threshold": 0.7,
+        "decidedShare": 0.8915289256198347,
+        "accuracy": 0.9003476245654692
+      }
+    },
+    "calibration": {
+      "computed": true,
+      "bins": [
+        {
+          "range": [
+            0,
+            0.2
+          ],
+          "count": 786,
+          "meanPredicted": 0.010585241730279872,
+          "observedFailRate": 0.09669211195928754
+        },
+        {
+          "range": [
+            0.2,
+            0.4
+          ],
+          "count": 26,
+          "meanPredicted": 0.28423076923076923,
+          "observedFailRate": 0.38461538461538464
+        },
+        {
+          "range": [
+            0.4,
+            0.6
+          ],
+          "count": 8,
+          "meanPredicted": 0.495,
+          "observedFailRate": 0.375
+        },
+        {
+          "range": [
+            0.6,
+            0.8
+          ],
+          "count": 7,
+          "meanPredicted": 0.6957142857142856,
+          "observedFailRate": 0.5714285714285714
+        },
+        {
+          "range": [
+            0.8,
+            1
+          ],
+          "count": 23,
+          "meanPredicted": 0.9339130434782609,
+          "observedFailRate": 0.6521739130434783
+        }
+      ],
+      "expectedCalibrationError": 0.09247058823529414,
+      "sample": 850
+    },
+    "latencyMs": {
+      "count": 119,
+      "mean": 434.99159663865544,
+      "p50": 396,
+      "p95": 721,
+      "max": 1082
+    },
+    "usage": {
+      "requests": 119,
+      "inputTokens": 393224,
+      "outputTokens": 38288
+    },
+    "simulated": false,
+    "mode": "live",
+    "model": "typesafe-ai/jev"
+  }
+}

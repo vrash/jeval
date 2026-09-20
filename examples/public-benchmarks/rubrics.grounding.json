@@ -1,0 +1,17 @@
+[
+  {
+    "id": "grounded-values",
+    "version": "1.0.0",
+    "kind": "grounded-values",
+    "severity": "critical",
+    "description": "Every number, date, time, amount or duration in the response appears in the references (deterministic, no judge).",
+    "criterion": "Concrete values must come from the supplied sources.",
+    "params": {
+      "groundIn": [
+        "context",
+        "toolEvents",
+        "input"
+      ]
+    }
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "dataset": "./data/ragtruth.holdout.jsonl",
+  "rubrics": "./rubrics.grounding.json",
+  "output": "./runs",
+  "provider": {
+    "model": "none"
+  },
+  "thresholds": {
+    "pass": 0.75,
+    "fail": 0.6
+  },
+  "concurrency": 3,
+  "timeoutMs": 30000,
+  "maxAttempts": 6,
+  "provenance": "ragtruth.holdout from public datasets; see README.md"
+}

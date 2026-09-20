@@ -1,0 +1,221 @@
+{
+  "generatedAt": "2026-09-20T09:40:37.660Z",
+  "run": {
+    "runId": "f8a30ea8-b100-4d78-9157-71ed8cef821d",
+    "mode": "live",
+    "simulated": false,
+    "model": "typesafe-ai/jev"
+  },
+  "labelsPath": "data/halueval.holdout.labels.jsonl",
+  "result": {
+    "sampleCount": 200,
+    "labelsWithoutPrediction": 0,
+    "predictionsWithoutLabel": 0,
+    "binaryLabelCount": 200,
+    "undecidableLabelCount": 0,
+    "labelSources": {
+      "imported": 200
+    },
+    "failureDetection": {
+      "decided": 179,
+      "confusion": {
+        "truePositive": 68,
+        "falsePositive": 5,
+        "falseNegative": 19,
+        "trueNegative": 87
+      },
+      "precision": 0.9315068493150684,
+      "recall": 0.7816091954022989,
+      "f1": 0.85
+    },
+    "abstention": {
+      "review": 21,
+      "skipped": 0,
+      "error": 0,
+      "reviewOnLabelledFail": 13,
+      "reviewOnLabelledPass": 8,
+      "reviewRateOnBinary": 0.105
+    },
+    "undecidable": {
+      "agree": 0,
+      "predictedDecided": 0,
+      "error": 0,
+      "agreementRate": null
+    },
+    "executionErrors": 0,
+    "matrix": {
+      "pass": {
+        "pass": 87,
+        "fail": 5,
+        "review": 8,
+        "skipped": 0,
+        "error": 0
+      },
+      "fail": {
+        "pass": 19,
+        "fail": 68,
+        "review": 13,
+        "skipped": 0,
+        "error": 0
+      }
+    },
+    "automation": {
+      "sample": 200,
+      "points": [
+        {
+          "threshold": 0.5,
+          "decided": 200,
+          "decidedShare": 1,
+          "accuracy": 0.845,
+          "failPrecision": 0.9259259259259259,
+          "failRecall": 0.75
+        },
+        {
+          "threshold": 0.55,
+          "decided": 199,
+          "decidedShare": 0.995,
+          "accuracy": 0.8492462311557789,
+          "failPrecision": 0.9259259259259259,
+          "failRecall": 0.75
+        },
+        {
+          "threshold": 0.6,
+          "decided": 192,
+          "decidedShare": 0.96,
+          "accuracy": 0.8541666666666666,
+          "failPrecision": 0.9240506329113924,
+          "failRecall": 0.73
+        },
+        {
+          "threshold": 0.65,
+          "decided": 188,
+          "decidedShare": 0.94,
+          "accuracy": 0.851063829787234,
+          "failPrecision": 0.922077922077922,
+          "failRecall": 0.71
+        },
+        {
+          "threshold": 0.7,
+          "decided": 185,
+          "decidedShare": 0.925,
+          "accuracy": 0.8594594594594595,
+          "failPrecision": 0.9210526315789473,
+          "failRecall": 0.7
+        },
+        {
+          "threshold": 0.75,
+          "decided": 176,
+          "decidedShare": 0.88,
+          "accuracy": 0.8693181818181818,
+          "failPrecision": 0.9428571428571428,
+          "failRecall": 0.66
+        },
+        {
+          "threshold": 0.8,
+          "decided": 173,
+          "decidedShare": 0.865,
+          "accuracy": 0.8786127167630058,
+          "failPrecision": 0.9558823529411765,
+          "failRecall": 0.65
+        },
+        {
+          "threshold": 0.85,
+          "decided": 172,
+          "decidedShare": 0.86,
+          "accuracy": 0.877906976744186,
+          "failPrecision": 0.9558823529411765,
+          "failRecall": 0.65
+        },
+        {
+          "threshold": 0.9,
+          "decided": 163,
+          "decidedShare": 0.815,
+          "accuracy": 0.901840490797546,
+          "failPrecision": 0.9692307692307692,
+          "failRecall": 0.63
+        },
+        {
+          "threshold": 0.95,
+          "decided": 145,
+          "decidedShare": 0.725,
+          "accuracy": 0.9310344827586207,
+          "failPrecision": 0.9672131147540983,
+          "failRecall": 0.59
+        }
+      ],
+      "suggestion": {
+        "targetAccuracy": 0.9,
+        "threshold": 0.9,
+        "decidedShare": 0.815,
+        "accuracy": 0.901840490797546
+      }
+    },
+    "calibration": {
+      "computed": true,
+      "bins": [
+        {
+          "range": [
+            0,
+            0.2
+          ],
+          "count": 129,
+          "meanPredicted": 0.022015503875968987,
+          "observedFailRate": 0.24806201550387597
+        },
+        {
+          "range": [
+            0.2,
+            0.4
+          ],
+          "count": 9,
+          "meanPredicted": 0.2811111111111111,
+          "observedFailRate": 0.6666666666666666
+        },
+        {
+          "range": [
+            0.4,
+            0.6
+          ],
+          "count": 5,
+          "meanPredicted": 0.484,
+          "observedFailRate": 1
+        },
+        {
+          "range": [
+            0.6,
+            0.8
+          ],
+          "count": 7,
+          "meanPredicted": 0.6857142857142857,
+          "observedFailRate": 1
+        },
+        {
+          "range": [
+            0.8,
+            1
+          ],
+          "count": 50,
+          "meanPredicted": 0.9753999999999999,
+          "observedFailRate": 1
+        }
+      ],
+      "expectedCalibrationError": 0.19320000000000004,
+      "sample": 200
+    },
+    "latencyMs": {
+      "count": 200,
+      "mean": 373.66,
+      "p50": 342,
+      "p95": 595,
+      "max": 862
+    },
+    "usage": {
+      "requests": 200,
+      "inputTokens": 130664,
+      "outputTokens": 9234
+    },
+    "simulated": false,
+    "mode": "live",
+    "model": "typesafe-ai/jev"
+  }
+}

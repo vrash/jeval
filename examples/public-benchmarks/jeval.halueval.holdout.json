@@ -1,0 +1,21 @@
+{
+  "dataset": "./data/halueval.holdout.jsonl",
+  "rubrics": "./rubrics.claims.json",
+  "output": "./runs",
+  "provider": {
+    "model": "typesafe-ai/jev"
+  },
+  "thresholds": {
+    "pass": 0.75,
+    "fail": 0.6
+  },
+  "concurrency": 3,
+  "timeoutMs": 30000,
+  "maxAttempts": 6,
+  "pricing": {
+    "inputPerMillionTokensUsd": 0.042,
+    "asOf": "2026-09-19",
+    "source": "https://docs.typesafe.ai/models"
+  },
+  "provenance": "halueval.holdout from public datasets; see README.md"
+}

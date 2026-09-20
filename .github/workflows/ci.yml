@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Least privilege: the workflow only reads the repository. No job needs to write.
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm build          # provider-jev and cli typecheck against core's built types
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm test:web
+      - run: pnpm --filter jeval-examples cli
+      - run: pnpm verify:packed
+      - run: pnpm build:web
+      - run: pnpm --filter @jeval/web exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+        env:
+          CI: "true"
+
+  # Opt-in: one real Jev request, only when the secret is configured on the repository.
+  live-smoke:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - name: Live smoke test (skips itself without TYPESAFE_API_KEY)
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+          # Leave these two as-is for a Vercel AI Gateway key; remove them for a direct TypeSafe key.
+          TYPESAFE_BASE_URL: ${{ vars.TYPESAFE_BASE_URL || 'https://ai-gateway.vercel.sh/typesafe' }}
+          TYPESAFE_DEFAULT_MODEL: ${{ vars.TYPESAFE_DEFAULT_MODEL || 'typesafe-ai/jev' }}
+        run: pnpm test:live

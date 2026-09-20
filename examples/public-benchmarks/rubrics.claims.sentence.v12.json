@@ -1,0 +1,19 @@
+[
+  {
+    "id": "claim-support",
+    "version": "1.2.0-sentence",
+    "kind": "claim-support",
+    "severity": "major",
+    "description": "Sentence-level claim support with paraphrase-tolerant outcome descriptions.",
+    "criterion": "Is every factual statement in the response stated in, or directly entailed by, the reference material? A single statement that the references contradict counts as contradicted; a statement the references do not mention counts as not covered.",
+    "params": {
+      "uncoveredIs": "fail",
+      "granularity": "sentence"
+    },
+    "outcomes": {
+      "acceptable": "reference_material states the sentence, directly entails it, or the sentence is a reasonable paraphrase or summary of it. General, evaluative or connective wording that adds no specific fact (names, numbers, dates, places, causes) counts as supported.",
+      "unacceptable": "reference_material contains a passage that says otherwise: a different number, date, name, place, cause or outcome.",
+      "insufficient": "the sentence adds a specific fact (a name, number, date, place, cause or claim) that no passage in reference_material contains or entails."
+    }
+  }
+]
