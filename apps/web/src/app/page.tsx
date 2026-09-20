@@ -4,11 +4,38 @@ import { Demo } from "@/components/demo";
 import { StatusBadge } from "@/components/status-badge";
 import { WaitlistForm } from "@/components/waitlist-form";
 import { SDK_EXAMPLE } from "@/lib/snippets";
-import { REPO_URL } from "@/lib/site";
+import { REPO_URL, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { JsonLd } from "@/components/json-ld";
 
 export default function HomePage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: SITE_NAME,
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Node.js 20+",
+      description: SITE_DESCRIPTION,
+      url: SITE_URL,
+      license: "https://opensource.org/license/mit",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Open source. Provider usage billed separately by the provider." },
+      ...(REPO_URL ? { codeRepository: REPO_URL } : {}),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: String(a) } })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  ];
   return (
     <>
+      <JsonLd data={structuredData} />
       <section className="mx-auto max-w-6xl px-4 pb-12 pt-16 sm:px-6 sm:pt-24">
         <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 text-xs font-medium text-fg-muted">
           <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />

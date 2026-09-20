@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createHmac } from "node:crypto";
 import { z } from "zod";
+import { checkBotId } from "botid/server";
 import { JevProvider } from "@jeval/provider-jev";
 import { DEMO_PRESET_IDS, DEMO_RUBRICS, getPreset } from "@/lib/demo/presets";
 import { runDemoPreset } from "@/lib/demo/run";
@@ -44,6 +45,10 @@ export async function POST(request: Request) {
   const cfg = liveConfig();
   if (!cfg.ready) {
     return NextResponse.json({ ok: false, error: "live_disabled", message: "Live evaluation is not enabled on this deployment. The demo runs on simulated fixtures." }, { status: 503, headers: noStore });
+  }
+  const verification = await checkBotId();
+  if (verification.isBot) {
+    return NextResponse.json({ ok: false, error: "bot_detected", message: "Automated requests are not accepted." }, { status: 403, headers: noStore });
   }
   const length = Number(request.headers.get("content-length") ?? "0");
   if (length > MAX_BODY_BYTES) return NextResponse.json({ ok: false, error: "too_large" }, { status: 413, headers: noStore });

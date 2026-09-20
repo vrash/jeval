@@ -16,7 +16,8 @@ export const MAX_BODY_BYTES = 4096;
 
 /** Rate limits enforced per hashed client key and per hashed email. */
 export const RATE_LIMIT_WINDOW_SECONDS = 10 * 60;
-export const RATE_LIMIT_PER_CLIENT = 5;
+/** Per network address. Generous because offices and campuses share addresses; the per-email limit and BotID do the real work. */
+export const RATE_LIMIT_PER_CLIENT = 20;
 export const RATE_LIMIT_PER_EMAIL = 3;
 
 export const SUCCESS_MESSAGE = "You're on the list. We'll email you about Jeval Cloud early access.";

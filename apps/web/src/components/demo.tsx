@@ -192,7 +192,7 @@ export function Demo({ compact = false }: { compact?: boolean }) {
                 type="button"
                 onClick={run}
                 disabled={running || selected.length === 0}
-                className="rounded-md bg-accent px-4 py-1.5 text-sm font-medium text-white hover:bg-accent-strong disabled:opacity-60"
+                className="rounded-md bg-accent px-4 py-1.5 text-sm font-medium text-bg hover:bg-accent-strong disabled:opacity-60"
               >
                 {running ? "Running…" : "Run checks"}
               </button>

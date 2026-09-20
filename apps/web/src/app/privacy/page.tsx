@@ -36,6 +36,13 @@ export default function PrivacyPage() {
           To be removed, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> from the address you signed up with; an operator deletes the
           row with a script and confirms.
         </p>
+        <h2>Bot protection</h2>
+        <p>
+          The waitlist and demo endpoints are protected by Vercel BotID (basic level), an invisible browser challenge. A small script served from
+          this site&rsquo;s own origin runs in your browser and attaches a challenge result to those requests; Vercel validates it on the server. We do
+          not see or store the signals it collects, and no cookie is set for it by this site. Vercel&rsquo;s platform firewall also rate-limits and
+          filters abusive traffic before it reaches the site.
+        </p>
         <h2>Demo</h2>
         <p>
           The default demo runs simulated fixtures in your browser and sends nothing. If a deployment enables live mode, the server sends only the

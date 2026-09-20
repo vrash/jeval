@@ -1,3 +1,4 @@
+import { checkBotId } from "botid/server";
 import { handleWaitlistRequest } from "@/lib/waitlist/handler";
 import { createWaitlistStoreFromEnv } from "@/lib/waitlist/store";
 
@@ -31,6 +32,14 @@ function allowedOriginsFromEnv(env: NodeJS.ProcessEnv): string[] {
 }
 
 export async function POST(request: Request): Promise<Response> {
+  // Vercel BotID (Basic): rejects requests that did not pass the browser challenge. Outside Vercel it is a no-op.
+  const verification = await checkBotId();
+  if (verification.isBot) {
+    return new Response(JSON.stringify({ ok: false, message: "Automated requests are not accepted. Please use the form on the site." }), {
+      status: 403,
+      headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" },
+    });
+  }
   return handleWaitlistRequest(request, {
     store: createWaitlistStoreFromEnv(process.env),
     allowedOrigins: allowedOriginsFromEnv(process.env),

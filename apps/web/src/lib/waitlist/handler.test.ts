@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { NOTICE_VERSION, SUCCESS_MESSAGE, UNAVAILABLE_MESSAGE } from "./constants";
+import { RATE_LIMIT_PER_CLIENT } from "./constants";
 import { handleWaitlistRequest, type WaitlistHandlerDeps } from "./handler";
 import { StoreUnavailableError, type WaitlistRecord, type WaitlistStore } from "./store";
 import { GET } from "@/app/api/waitlist/route";
@@ -174,16 +175,16 @@ describe("handleWaitlistRequest", () => {
     expect(res.status).toBe(503);
   });
 
-  it("rate limits the 6th request from one client with 429 and Retry-After", async () => {
+  it("rate limits the request after RATE_LIMIT_PER_CLIENT from one client with 429 and Retry-After", async () => {
     const headers = { "x-forwarded-for": "203.0.113.7, 10.0.0.1" };
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < RATE_LIMIT_PER_CLIENT; i++) {
       const res = await handleWaitlistRequest(makeRequest(validBody({ email: `p${i}@example.com` }), { headers }), deps);
       expect(res.status).toBe(200);
     }
     const sixth = await handleWaitlistRequest(makeRequest(validBody({ email: "p6@example.com" }), { headers }), deps);
     expect(sixth.status).toBe(429);
     expect(sixth.headers.get("retry-after")).toBe("600");
-    expect(store.insertCalls).toHaveLength(5);
+    expect(store.insertCalls).toHaveLength(RATE_LIMIT_PER_CLIENT);
     // The client key is an HMAC, never the raw address.
     for (const key of store.buckets.keys()) {
       expect(key).not.toContain("203.0.113.7");
