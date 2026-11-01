@@ -26,13 +26,13 @@
   },
   "dependencies": {
     "@jeval/core": "workspace:*",
-    "@typesafe-ai/sdk": "0.6.0"
+    "@typesafe-ai/sdk": "0.7.0"
   },
   "devDependencies": {
-    "@types/node": "26.6.2",
+    "@types/node": "26.6.6",
     "tsup": "8.5.1",
     "typescript": "5.9.3",
-    "vitest": "5.0.1"
+    "vitest": "5.0.5"
   },
   "peerDependencies": {},
   "keywords": ["jeval", "jev", "typesafe", "evaluation"],
